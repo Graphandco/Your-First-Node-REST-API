@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const subscriberSchema = new mongoose.Schema({
+const codingTypeSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
     },
-    subscribeDate: {
+    codingTipDate: {
         type: Date,
         required: true,
         default: Date.now,
@@ -14,6 +14,10 @@ const subscriberSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    tipContent: {
+        type: String,
+        required: true,
+    },
 });
 
-module.exports = mongoose.model('Subscriber', subscriberSchema);
+module.exports = mongoose.model('CodingTip', codingTypeSchema);
