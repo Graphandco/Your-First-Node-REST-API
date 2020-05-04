@@ -22,7 +22,8 @@ router.post('/', async (req, res) => {
     const codingTip = new CodingTip({
         name: req.body.name,
         language: req.body.language,
-        tipContent: req.body.tipContent,
+        desc: req.body.desc,
+        content: req.body.content,
     });
     try {
         const newCodingTip = await codingTip.save();
@@ -37,11 +38,14 @@ router.patch('/:id', getCodingTip, async (req, res) => {
     if (req.body.name != null) {
         res.codingTip.name = req.body.name;
     }
+    if (req.body.desc != null) {
+        res.codingTip.desc = req.body.desc;
+    }
     if (req.body.language != null) {
         res.codingTip.language = req.body.language;
     }
     if (req.body.tipContent != null) {
-        res.codingTip.tipContent = req.body.tipContent;
+        res.codingTip.content = req.body.content;
     }
     try {
         const updatedCodingTip = await res.codingTip.save();

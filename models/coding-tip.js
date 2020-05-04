@@ -5,6 +5,10 @@ const codingTypeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    desc: {
+        type: String,
+        required: true,
+    },
     codingTipDate: {
         type: Date,
         required: true,
@@ -14,7 +18,7 @@ const codingTypeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    tipContent: {
+    content: {
         type: String,
         required: true,
     },
