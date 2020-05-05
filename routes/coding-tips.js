@@ -59,7 +59,7 @@ router.patch('/:id', getCodingTip, async (req, res) => {
 router.delete('/:id', getCodingTip, async (req, res) => {
     try {
         await res.codingTip.remove();
-        res.json({ message: 'Deleted Coding Tip' });
+        res.json({ message: 'Tip removed' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
